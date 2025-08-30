@@ -107,11 +107,11 @@ python multi_model_comparison.py
 ### File Structure
 
 ```
-📁 GEN AI Course/
+📁 Ethics-Tools-Model-Comparison/
 ├── 📄 gemini_ethics_tester.py      # Core framework classes
-├── 📄 multi_model_comparison.py    # Multi-model comparison
-├── 📄 demo_usage.py                # Quick demo script  
-├── 📄 test_ethics_framework.py     # Comprehensive unit tests
+├── 📄 multi_model_comparison.py    # Multi-model comparison engine
+├── 📄 demo_usage.py                # Quick demo script with real API calls
+├── 📄 tests.py                     # Comprehensive unit tests (REAL API)
 ├── 📄 requirements.txt             # Python dependencies
 ├── 📄 .env                         # API configuration (create this)
 ├── 📄 README.md                    # This documentation
@@ -249,19 +249,19 @@ class BiasTestResult:
 ### Run Unit Tests
 
 ```bash
-python test_ethics_framework.py
+python tests.py
 ```
 
 ### Test Coverage
 
-The framework includes 6 comprehensive unit tests:
+The framework includes 6 comprehensive unit tests with **REAL API integration**:
 
-1. **Environment Setup** - API key validation
+1. **Environment Setup** - API key validation and connection testing
 2. **Model Configuration** - All 4 Gemini models verification
-3. **Prompts & Indicators** - Bias detection logic validation
-4. **JSON Output Generation** - File creation testing
-5. **Final JSON Structure** - Output format validation
-6. **Integration Testing** - End-to-end workflow verification
+3. **Prompts & Indicators** - Bias detection logic validation with real scoring
+4. **Real Bias Testing** - Actual Gemini API calls and response validation
+5. **Ethics Report Generation** - Real data report creation and validation
+6. **Model Comparison Integration** - End-to-end workflow with real API integration
 
 ### Expected Test Output
 
