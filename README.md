@@ -278,14 +278,13 @@ python tests.py
 
 ### Test Coverage
 
-The framework includes 6 comprehensive unit tests with **REAL API integration**:
+The framework includes 5 comprehensive unit tests with **REAL API integration**:
 
 1. **Environment Setup** - API key validation and connection testing
 2. **Model Configuration** - All 4 Gemini models verification
 3. **Prompts & Indicators** - Bias detection logic validation with real scoring
 4. **Real Bias Testing** - Actual Gemini API calls and response validation
 5. **Ethics Report Generation** - Real data report creation and validation
-6. **Model Comparison Integration** - End-to-end workflow with real API integration
 
 ### Expected Test Output
 
