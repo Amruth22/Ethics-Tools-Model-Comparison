@@ -49,7 +49,7 @@ A comprehensive Python framework for testing bias, fairness, and ethical behavio
 
 4. **Verify Installation**
    ```bash
-   python test_ethics_framework.py
+   python tests.py
    ```
 
 ## 🏃‍♂️ Quick Start
@@ -273,6 +273,8 @@ class BiasTestResult:
 ```bash
 python tests.py
 ```
+
+**Note**: All tests use **REAL Gemini API calls** - no mocking or simulated data. This ensures the framework works correctly with actual AI responses and provides authentic bias detection results.
 
 ### Test Coverage
 
