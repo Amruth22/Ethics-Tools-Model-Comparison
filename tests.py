@@ -3,7 +3,7 @@ import os
 import json
 import asyncio
 from dotenv import load_dotenv
-from gemini_ethics_tester import GeminiEthicsTester, GeminiModelComparator, BiasTestResult, test_api_connection
+from gemini_ethics_tester import GeminiEthicsTester, GeminiModelComparator, BiasTestResult
 from multi_model_comparison import MultiModelEthicsComparison
 
 # Load environment variables
