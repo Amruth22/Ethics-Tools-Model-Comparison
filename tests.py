@@ -29,8 +29,6 @@ class TestGeminiEthicsFramework(unittest.TestCase):
         
         print(f"✅ API Key validated: {cls.api_key[:10]}...{cls.api_key[-5:]}")
         
-        print("✅ API key format validated")
-        
         # Initialize test components
         cls.tester = GeminiEthicsTester(cls.api_key, "gemini-2.0-flash-exp")
         cls.comparator = GeminiModelComparator()
@@ -52,9 +50,6 @@ class TestGeminiEthicsFramework(unittest.TestCase):
         self.assertIsNotNone(api_key, "GEMINI_API_KEY not found in environment variables")
         self.assertGreater(len(api_key), 0, "GEMINI_API_KEY is empty")
         self.assertTrue(api_key.startswith("AIza"), "GEMINI_API_KEY does not have expected format")
-        
-        # API key format already validated above
-        print("API key format validation completed")
         
         print(f"✅ PASS: Environment setup validated - API key: {api_key[:10]}...")
 
