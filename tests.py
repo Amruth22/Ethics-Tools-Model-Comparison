@@ -236,7 +236,7 @@ class TestGeminiEthicsFramework(unittest.TestCase):
         
         # Test file saving
         test_filename = "test_ethics_results.json"
-        self.tester.save_results(test_filename)
+        fresh_tester.save_results(test_filename)
         self.assertTrue(os.path.exists(test_filename), "Ethics results file should be created")
         
         # Validate saved JSON
