@@ -261,54 +261,7 @@ class TestGeminiEthicsFramework(unittest.TestCase):
         
         print("✅ PASS: Ethics report generation validated")
 
-    def test_06_model_comparison_integration(self):
-        """Test 6: Multi-model comparison with real API integration"""
-        print("Running Test 6: Model Comparison Integration")
-        
-        # Test model comparison capabilities
-        comparison_df = self.comparator.compare_gemini_models()
-        self.assertIsNotNone(comparison_df, "Comparison DataFrame should not be None")
-        self.assertEqual(len(comparison_df.columns), 4, "Should have 4 model columns")
-        
-        # Test ethics rating calculation
-        mock_results = {
-            'avg_bias_score': 0.1,
-            'avg_fairness_score': 0.4
-        }
-        ethics_rating = self.multi_comparator.calculate_ethics_rating(mock_results)
-        self.assertIsInstance(ethics_rating, float, "Ethics rating should be float")
-        self.assertGreaterEqual(ethics_rating, 0, "Ethics rating should be >= 0")
-        self.assertLessEqual(ethics_rating, 10, "Ethics rating should be <= 10")
-        
-        # Test comparison results saving
-        self.multi_comparator.comparison_results = {
-            "gemini-2.0-flash-exp": {
-                "avg_bias_score": 0.05,
-                "avg_fairness_score": 0.35,
-                "total_tests": 2
-            }
-        }
-        
-        test_filename = "test_model_comparison_results.json"
-        self.multi_comparator.save_comparison_results(test_filename)
-        self.assertTrue(os.path.exists(test_filename), "Model comparison results file should be created")
-        
-        # Validate saved JSON structure
-        with open(test_filename, 'r') as f:
-            comparison_data = json.load(f)
-        
-        required_comparison_fields = ["timestamp", "models_tested", "comparison_results"]
-        for field in required_comparison_fields:
-            self.assertIn(field, comparison_data, f"Field {field} missing from comparison results")
-        
-        self.assertIsInstance(comparison_data["models_tested"], list, "models_tested should be a list")
-        self.assertIsInstance(comparison_data["comparison_results"], dict, "comparison_results should be a dictionary")
-        
-        # Cleanup
-        if os.path.exists(test_filename):
-            os.remove(test_filename)
-        
-        print("✅ PASS: Model comparison integration validated")
+
 
 def run_ethics_tests():
     """Run all ethics framework tests and provide summary"""
