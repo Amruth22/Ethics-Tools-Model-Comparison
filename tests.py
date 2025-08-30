@@ -314,7 +314,7 @@ def run_ethics_tests():
 if __name__ == "__main__":
     print("🚀 Starting Gemini Ethics Framework Tests")
     print("📋 Make sure you have GEMINI_API_KEY in your .env file")
-    print("🔧 Framework tests bias detection with REAL API calls")
+    print("🔧 Framework tests bias detection with REAL API calls (5 tests)")
     print()
     
     success = run_ethics_tests()
