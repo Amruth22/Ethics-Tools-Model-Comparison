@@ -30,7 +30,7 @@ class TestGeminiEthicsFramework(unittest.TestCase):
         print(f"✅ API Key validated: {cls.api_key[:10]}...{cls.api_key[-5:]}")
         
         # Initialize test components
-        cls.tester = GeminiEthicsTester(cls.api_key, "gemini-2.0-flash-exp")
+        cls.tester = GeminiEthicsTester(cls.api_key, "gemini-1.5-flash")
         cls.comparator = GeminiModelComparator()
         cls.multi_comparator = MultiModelEthicsComparison(cls.api_key)
         
@@ -179,7 +179,7 @@ class TestGeminiEthicsFramework(unittest.TestCase):
         # We'll use the results from test_04 or create new ones synchronously
         
         # Create a fresh tester instance
-        fresh_tester = GeminiEthicsTester(self.api_key, "gemini-2.0-flash-exp")
+        fresh_tester = GeminiEthicsTester(self.api_key, "gemini-1.5-flash")
         
         # Run async test in a clean way
         def run_sync_test():
